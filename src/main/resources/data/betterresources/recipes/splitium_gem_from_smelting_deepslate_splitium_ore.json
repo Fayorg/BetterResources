@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "splitium_gem",
+  "ingredient": {
+    "item": "betterresources:splitium_deepslate"
+  },
+  "result": "betterresources:splitium_gem",
+  "experience": 10,
+  "cookingtime": 400
+}

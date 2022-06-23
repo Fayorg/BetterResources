@@ -1,0 +1,10 @@
+{
+  "item.betterresources.splitium_raw": "Raw Splitium",
+  "item.betterresources.splitium_gem": "Splitium Gem",
+  "item.betterresources.splitium_enriched": "Enriched Splitium Gem",
+
+  "itemGroup.betterresources": "Better Resources",
+
+  "block.betterresources.splitium_ore": "Splitium Ore",
+  "block.betterresources.splitium_deepslate": "Splitium Deepslate"
+}

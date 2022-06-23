@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="Fayorg. All rights reserved"
+# A URL to refer people to when problems occur with this mod
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+
+[[mods]]
+modId="betterresources"
+version="${file.jarVersion}"
+displayName="Better Resources"
+
+# A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+# A URL for the "homepage" for this mod, displayed in the mod UI
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="betterresources.png" #optional
+# A text field displayed in the mod UI
+credits="Thanks to all the amazing people who teach me how to create incredible mods with forge! (MinecraftForgeFrance & Kaupenjoe in particular)" #optional
+# A text field displayed in the mod UI
+authors="Fayorg" #optional
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+TODO: Create a description.
+Btw this mod is still in PreAlpha, it can corrupt your world or destroy things in your world/server. I'am in any case responsible for that!
+(You better wait until the real version come out if you're planning on creating a Modpack or a server. This is only for development purposes.)
+'''
+
+[[dependencies.betterresources]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.betterresources]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

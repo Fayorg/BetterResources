@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "betterresources:block/splitium_deepslate"
+  }
+}
