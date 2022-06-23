@@ -25,6 +25,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPLITIUM_DEEPSLATE = registerBlock("splitium_deepslate",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> SPLITIUM_BLOCK = registerBlock("splitium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(5f).requiresCorrectToolForDrops()));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, BetterResourcesMod.BETTERTAB);
