@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "splitium_gem",
+  "ingredients": [
+    {
+      "item": "betterresources:splitium_enriched_block"
+    }
+  ],
+  "result": {
+    "item": "betterresources:splitium_enriched",
+    "count": 9
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "betterresources:enriching_catalyst",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "betterresources:splitium_enriched"
+  }
+}

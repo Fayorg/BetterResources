@@ -7,5 +7,9 @@
 
   "block.betterresources.splitium_ore": "Splitium Ore",
   "block.betterresources.splitium_deepslate": "Splitium Deepslate",
-  "block.betterresources.splitium_block": "Splitium Block"
+  "block.betterresources.splitium_block": "Splitium Block",
+  "block.betterresources.splitium_enriched_block": "Enriched Splitium Block",
+  "block.betterresources.enriching_catalyst": "Enriching Catalyst",
+
+  "block.betterresources.enriching_catalyst.name": "Enriching Catalyst"
 }
