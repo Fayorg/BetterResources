@@ -57,6 +57,9 @@ public class BetterResourcesMod
 
     /*
         TODO: Add the mining level & tool
+        TODO: Added Enriching Catalyst Texture
+        TODO: Create Texture for Unstable Gem (animated?)
+        TODO: Create the resource finder machine block
      */
 
     private void setup(final FMLCommonSetupEvent event)
