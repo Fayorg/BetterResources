@@ -20,6 +20,9 @@ public class ModItems {
     public static final RegistryObject<Item> SPLITIUM_ENRICHED = ITEMS.register("splitium_enriched",
             () -> new Item(new Item.Properties().tab(BetterResourcesMod.BETTERTAB)));
 
+    public static final RegistryObject<Item> SPLITIUM_UNSTABLE = ITEMS.register("splitium_unstable",
+            () -> new UnstableGemItem(new Item.Properties().tab(BetterResourcesMod.BETTERTAB)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -40,8 +40,10 @@ public class EnrichingCatalystBlockEntity extends BlockEntity implements MenuPro
     };
     private LazyOptional<IItemHandler> lazyOptional = LazyOptional.empty();
     protected final ContainerData data;
-    private int progress = 0;
-    private int maxProgress = 56;
+    private int visualProgress = 0;
+    private int visualMaxProgress = 56;
+
+    private int progress = 0, maxProgress = 400;
     public EnrichingCatalystBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntity.ENRICHING_CATALYST.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
@@ -126,6 +128,10 @@ public class EnrichingCatalystBlockEntity extends BlockEntity implements MenuPro
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;
             setChanged(pLevel, pPos, pState);
+
+            // Setting the visual progress
+            pBlockEntity.visualProgress = pBlockEntity.visualMaxProgress * pBlockEntity.progress / pBlockEntity.maxProgress;
+
             if(pBlockEntity.progress > pBlockEntity.maxProgress) {
                 craftItem(pBlockEntity);
             }

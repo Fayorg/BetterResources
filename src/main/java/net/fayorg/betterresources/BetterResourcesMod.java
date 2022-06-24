@@ -3,6 +3,7 @@ package net.fayorg.betterresources;
 import com.mojang.logging.LogUtils;
 import net.fayorg.betterresources.block.ModBlocks;
 import net.fayorg.betterresources.block.entity.ModBlockEntity;
+import net.fayorg.betterresources.entity.ModEntities;
 import net.fayorg.betterresources.item.ModItems;
 import net.fayorg.betterresources.recipe.ModRecipes;
 import net.fayorg.betterresources.screen.EnrichingCatalystScreen;
@@ -45,6 +46,7 @@ public class BetterResourcesMod
         ModBlockEntity.register(eventBus);
         ModMenuTypes.register(eventBus);
         ModRecipes.register(eventBus);
+        ModEntities.register(eventBus);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -52,7 +54,6 @@ public class BetterResourcesMod
 
     /*
         TODO: Add the mining level & tool
-        TODO: Make the processing to go from Gem to Enriched (GUI)
      */
 
     private void setup(final FMLCommonSetupEvent event)
