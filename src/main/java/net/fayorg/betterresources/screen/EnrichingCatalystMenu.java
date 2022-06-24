@@ -3,6 +3,7 @@ package net.fayorg.betterresources.screen;
 import net.fayorg.betterresources.block.ModBlocks;
 import net.fayorg.betterresources.block.entity.EnrichingCatalystBlockEntity;
 import net.fayorg.betterresources.screen.slot.ModResultSlot;
+import net.fayorg.betterresources.screen.slot.SplitiumGemSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -35,7 +36,7 @@ public class EnrichingCatalystMenu extends AbstractContainerMenu {
 
         this.entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(iItemHandler -> {
             this.addSlot(new SlotItemHandler(iItemHandler, 0, 42, 21));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 35, 42));
+            this.addSlot(new SplitiumGemSlot(iItemHandler, 1, 35, 42));
             this.addSlot(new SlotItemHandler(iItemHandler, 2, 42, 63));
             this.addSlot(new ModResultSlot(iItemHandler, 3, 123, 42));
         });

@@ -60,6 +60,7 @@ public class BetterResourcesMod
         TODO: Added Enriching Catalyst Texture
         TODO: Create Texture for Unstable Gem (animated?)
         TODO: Create the resource finder machine block
+        TODO: Integrate Recipes in JEI
      */
 
     private void setup(final FMLCommonSetupEvent event)

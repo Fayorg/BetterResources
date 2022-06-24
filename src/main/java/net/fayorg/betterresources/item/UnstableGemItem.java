@@ -31,10 +31,7 @@ public class UnstableGemItem extends Item {
             unstableGem.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 3.0F, 1.0F);
             pLevel.addFreshEntity(unstableGem);
         }
-
-        if (!pPlayer.getAbilities().instabuild) {
-            itemstack.shrink(1);
-        }
+        itemstack.shrink(1);
 
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
