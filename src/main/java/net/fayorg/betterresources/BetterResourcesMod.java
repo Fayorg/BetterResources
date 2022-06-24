@@ -4,12 +4,15 @@ import com.mojang.logging.LogUtils;
 import net.fayorg.betterresources.block.ModBlocks;
 import net.fayorg.betterresources.block.entity.ModBlockEntity;
 import net.fayorg.betterresources.entity.ModEntities;
+import net.fayorg.betterresources.entity.renderer.ThrownUnstableGemRenderer;
 import net.fayorg.betterresources.item.ModItems;
 import net.fayorg.betterresources.recipe.ModRecipes;
 import net.fayorg.betterresources.screen.EnrichingCatalystScreen;
 import net.fayorg.betterresources.screen.ModMenuTypes;
 import net.fayorg.betterresources.tab.BetterResourceTab;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -64,6 +67,7 @@ public class BetterResourcesMod
     private void clientSetup(final FMLClientSetupEvent event) {
 
         MenuScreens.register(ModMenuTypes.ENRICHING_CATALYST_MENU.get(), EnrichingCatalystScreen::new);
+        EntityRenderers.register(ModEntities.UNSTABLE_GEM.get(), ThrownUnstableGemRenderer::new);
 
     }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "betterresources:enriching_catalyst",
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "output": {
+    "item": "betterresources:splitium_unstable"
+  }
+}
