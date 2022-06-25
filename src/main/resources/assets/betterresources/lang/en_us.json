@@ -13,5 +13,6 @@
   "block.betterresources.splitium_enriched_block": "Enriched Splitium Block",
   "block.betterresources.enriching_catalyst": "Enriching Catalyst",
 
-  "block.betterresources.enriching_catalyst.name": "Enriching Catalyst"
+  "block.betterresources.enriching_catalyst.name": "Enriching Catalyst",
+  "block.betterresources.extractor.name": "Extractor"
 }

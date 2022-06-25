@@ -14,6 +14,9 @@ public class ModBlockEntity {
 
     public static final RegistryObject<BlockEntityType<EnrichingCatalystBlockEntity>> ENRICHING_CATALYST = BLOCK_ENTITY.register("enriching_catalyst_block_entity",
             () -> BlockEntityType.Builder.of(EnrichingCatalystBlockEntity::new, ModBlocks.ENRICHING_CATALYST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ExtractorBlockEntity>> EXTRACTOR = BLOCK_ENTITY.register("extractor_block_entity",
+            () -> BlockEntityType.Builder.of(ExtractorBlockEntity::new, ModBlocks.EXTRACTOR.get()).build(null));
     public static void register(IEventBus bus) {
         BLOCK_ENTITY.register(bus);
     }

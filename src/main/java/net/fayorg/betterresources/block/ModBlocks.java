@@ -35,6 +35,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENRICHING_CATALYST = registerBlock("enriching_catalyst",
             () -> new EnrichingCatalystBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()), new Item.Properties().tab(BetterResourcesMod.BETTERTAB).stacksTo(1));
 
+    public static final RegistryObject<Block> EXTRACTOR = registerBlock("extractor",
+            () -> new ExtractorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()), new Item.Properties().tab(BetterResourcesMod.BETTERTAB).stacksTo(1));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, BetterResourcesMod.BETTERTAB);
