@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,7 +33,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> ENRICHING_CATALYST = registerBlock("enriching_catalyst",
-            () -> new EnrichingCatalystBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(5f)), new Item.Properties().tab(BetterResourcesMod.BETTERTAB).stacksTo(1));
+            () -> new EnrichingCatalystBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()), new Item.Properties().tab(BetterResourcesMod.BETTERTAB).stacksTo(1));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

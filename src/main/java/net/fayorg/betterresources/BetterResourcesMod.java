@@ -11,6 +11,8 @@ import net.fayorg.betterresources.screen.EnrichingCatalystScreen;
 import net.fayorg.betterresources.screen.ModMenuTypes;
 import net.fayorg.betterresources.tab.BetterResourceTab;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
@@ -71,7 +73,10 @@ public class BetterResourcesMod
     private void clientSetup(final FMLClientSetupEvent event) {
 
         MenuScreens.register(ModMenuTypes.ENRICHING_CATALYST_MENU.get(), EnrichingCatalystScreen::new);
+
         EntityRenderers.register(ModEntities.UNSTABLE_GEM.get(), ThrownUnstableGemRenderer::new);
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENRICHING_CATALYST.get(), RenderType.translucent());
 
     }
 }

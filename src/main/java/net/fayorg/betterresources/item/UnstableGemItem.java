@@ -25,19 +25,32 @@ public class UnstableGemItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
+        if(!pPlayer.getAbilities().instabuild) {
+            itemstack.shrink(1);
+        }
         if (!pLevel.isClientSide) {
             UnstableGem unstableGem = new UnstableGem(pLevel, pPlayer);
             unstableGem.setItem(itemstack);
             unstableGem.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 3.0F, 1.0F);
             pLevel.addFreshEntity(unstableGem);
         }
-        itemstack.shrink(1);
-
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if(pEntity instanceof Player player) {
+            if(!player.getAbilities().instabuild) {
+                prepareExplode(pStack, pLevel, pEntity, pSlotId);
+            } else {
+                return;
+            }
+        } else {
+            prepareExplode(pStack, pLevel, pEntity, pSlotId);
+        }
+    }
+
+    private void prepareExplode(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId) {
         if(pStack.hasTag()) {
             int ticksBeforeExplode = pStack.getTag().getInt("betterresources.ticksBeforeExplode");
             ticksBeforeExplode--;

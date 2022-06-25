@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "betterresources:block/enriching_catalyst" },
+    "facing=east": { "model": "betterresources:block/enriching_catalyst", "y": 90 },
+    "facing=south": { "model": "betterresources:block/enriching_catalyst", "y": 180 },
+    "facing=west": { "model": "betterresources:block/enriching_catalyst", "y": 270 }
+  }
+}
