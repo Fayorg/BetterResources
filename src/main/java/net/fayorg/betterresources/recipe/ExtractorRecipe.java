@@ -14,12 +14,14 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
+import java.util.Random;
 
 public class ExtractorRecipe implements Recipe<SimpleContainer> {
 
     private final ResourceLocation id;
     private final HashMap<Ingredient, Float> outputs;
     private final NonNullList<Ingredient> inputs;
+    private final Random random = new Random();
 
     public ExtractorRecipe(ResourceLocation id, HashMap<Ingredient, Float> output, NonNullList<Ingredient> recipeItems) {
         this.id = id;
@@ -39,7 +41,7 @@ public class ExtractorRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return false;
+        return true;
     }
 
     @Override
@@ -49,7 +51,7 @@ public class ExtractorRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public ResourceLocation getId() {
-        return null;
+        return id;
     }
 
     @Override
@@ -75,6 +77,10 @@ public class ExtractorRecipe implements Recipe<SimpleContainer> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "extractor";
+    }
+
+    private ItemStack getOutputItem() {
+        return null;
     }
 
     public static class Serializer implements RecipeSerializer<ExtractorRecipe> {
@@ -126,7 +132,7 @@ public class ExtractorRecipe implements Recipe<SimpleContainer> {
             }
 
             HashMap<Ingredient, Float> outputs = new HashMap<>();
-            int hashSize = buf.readInt();
+            int hashSize = buf.readInt() - 1;
             for (int i = 0; i < hashSize; i++) {
                 outputs.put(Ingredient.fromNetwork(buf), buf.readFloat());
             }
@@ -161,7 +167,7 @@ public class ExtractorRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public Class<RecipeSerializer<?>> getRegistryType() {
-            return ExtractorRecipe.Serializer.castClass(RecipeSerializer.class);
+            return Serializer.castClass(RecipeSerializer.class);
         }
 
         @SuppressWarnings("unchecked") // Need this wrapper, because generics

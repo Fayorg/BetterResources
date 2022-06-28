@@ -13,7 +13,7 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<EnrichingCatalystRecipe>> ENRICHING_CATALYST_SERIALIZER = SERIALIZERS.register("enriching_catalyst", () -> EnrichingCatalystRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<ExtractorRecipe>> EXTRACTOR_SERIALIZER = SERIALIZERS.register("extractor", () -> ExtractorRecipe.Serializer.INSTANCE);
+    //public static final RegistryObject<RecipeSerializer<ExtractorRecipe>> EXTRACTOR_SERIALIZER = SERIALIZERS.register("extractor", () -> ExtractorRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus bus) {
         SERIALIZERS.register(bus);
